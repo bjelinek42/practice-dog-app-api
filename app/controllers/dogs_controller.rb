@@ -10,9 +10,12 @@ class DogsController < ApplicationController
   end
 
   def create
-    dog = Dog.new(name: params[:name], age: params[:age], breed: params[:breed])
-    dog.save
-    render json: dog
+    dog = Dog.new(name: params[:name], age: params[:age], breed: params[:breed], user_id: current_user.id)
+    if dog.save
+      render json: dog
+    else
+      render json: dog.errors.full_messages
+    end
   end
 
   def update
@@ -20,13 +23,20 @@ class DogsController < ApplicationController
     dog.name = params[:name]
     dog.age = params[:age]
     dog.breed = params[:breed]
-    dog.save
-    render json: dog
+    if dog.user_id == current_user.id
+      dog.save
+    else
+      render json: {message: "you are not the user that created this dog"}
+    end
   end
 
   def destroy
     dog = Dog.find(params[:id])
-    dog.delete
+    if dog.user_id == current_user.id
+      dog.delete
+    else
+      render json: {message: "you are not the user that created this dog"}
+    end
   end
 end
 

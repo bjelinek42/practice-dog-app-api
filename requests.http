@@ -6,6 +6,7 @@ GET http://localhost:3000/dogs/2
 
 ###
 POST http://localhost:3000/dogs
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDc5ODc0ODZ9.sL1tU9TmW6TCk08v7rZQNE4Upk8Jbnf2oF2196t3vWM
 content-type: application/json
 
 {
@@ -25,7 +26,8 @@ content-type: application/json
 }
 
 ###
-DELETE http://localhost:3000/dogs/9
+DELETE http://localhost:3000/dogs/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDc5ODgxMjJ9.jsO86Ko_TFtN6L9lEk8uC8_iOO-zSsJVtlf1yK63vME
 
 ### Users create (signup)
 POST http://localhost:3000/users.json
@@ -43,6 +45,6 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "ben@test.com",
+  "email": "katrina@test.com",
   "password": "password"
 }
