@@ -6,8 +6,8 @@ Rails.application.routes.draw do
 
   get "dogs" => "dogs#index"
   get "dogs/:id" => "dogs#show"
-  get "dogs" => "dogs#create"
-  get "dogs/:id" => "dogs#update"
-  get "dogs/:id" => "dogs#destroy"
-  
+  post "dogs" => "dogs#create"
+  patch "dogs/:id" => "dogs#update"
+  delete "dogs/:id" => "dogs#destroy"
+
 end

@@ -1,2 +1,21 @@
 ###
 GET http://localhost:3000/dogs
+
+###
+GET http://localhost:3000/dogs/2
+
+###
+POST http://localhost:3000/dogs
+content-type: application/json
+
+{
+  "name": "Scooby Doo",
+  "age": 32,
+  "breed": "Great Dane"
+}
+
+###
+GET http://localhost:3000/dogs
+
+###
+GET http://localhost:3000/dogs
