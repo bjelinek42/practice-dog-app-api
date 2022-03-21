@@ -25,4 +25,24 @@ content-type: application/json
 }
 
 ###
-GET http://localhost:3000/dogs
+DELETE http://localhost:3000/dogs/9
+
+### Users create (signup)
+POST http://localhost:3000/users.json
+Content-Type: application/json
+
+{
+  "name": "katrina",
+  "email": "katrina@test.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+
+### Sessions create (login)
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+  "email": "ben@test.com",
+  "password": "password"
+}
