@@ -15,7 +15,14 @@ content-type: application/json
 }
 
 ###
-GET http://localhost:3000/dogs
+PATCH http://localhost:3000/dogs/8
+content-type: application/json
+
+{
+  "name": "Beathoven",
+  "age": 14,
+  "breed": "St. Bernard"
+}
 
 ###
 GET http://localhost:3000/dogs
